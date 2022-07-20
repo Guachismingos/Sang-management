@@ -1,16 +1,24 @@
+import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import { AuthProvider } from "./context/AuthContext";
+import { ThemeProvider } from "@emotion/react";
 
 import Layout from "./components/Layout";
-import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
+
+//Styles
+import "./styles/global.scss";
+import theme from "./styles/theme";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
+  <StrictMode>
+    <ThemeProvider theme={theme}>
       <AuthProvider>
-        <Layout />
+        <BrowserRouter>
+          <Layout />
+        </BrowserRouter>
       </AuthProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+    </ThemeProvider>
+  </StrictMode>
 );

@@ -1,0 +1,48 @@
+@import "animate.css";
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+@font-face {
+  src: url("../assets/fonts/Raleway.ttf");
+  font-family: "Raleway";
+}
+
+
+* {
+  font-family: "Raleway";
+}
+
+#root {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #919191cc;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555a8;
+}
+
+.pageContainer {
+  height: 93.5vh;
+  overflow: auto;
+
+  .centerChild {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

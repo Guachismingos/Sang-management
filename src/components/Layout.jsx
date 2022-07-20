@@ -1,22 +1,18 @@
-//CSS
-import "../styles/style.css";
-import "bootswatch/dist/lux/bootstrap.min.css";
+import { Box } from "@mui/material";
 
-import { Container } from "react-bootstrap";
+import { Navigate, Route, Routes } from "react-router-dom";
 
-import Header from "./Header";
+import PrivateRoute from "../router/PrivateRoute";
 
 import routes from "../router/routes";
-import { Route, Routes } from "react-router-dom";
-import PrivateRoute from "./../router/PrivateRoute";
-import { Navigate } from "react-router-dom";
+import Header from "./Header";
 
 const Layout = () => {
   const { path: loginPath, Component: LoginComponent } = routes[0];
-  
+
   return (
-    <Container fluid>
-      <Header />
+    <Box className="animate__animated animate__fadeIn animate__fast">
+      <Header/>
       <Routes>
         {routes.slice(1).map(({ path, Component, name, childs }) =>
           !childs ? (
@@ -48,7 +44,7 @@ const Layout = () => {
         </Route>
         <Route exact path="/*" element={<Navigate to="/panel" replace />} />
       </Routes>
-    </Container>
+    </Box>
   );
 };
 

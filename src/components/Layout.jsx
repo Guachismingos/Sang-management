@@ -12,7 +12,7 @@ const Layout = () => {
 
   return (
     <Box className="animate__animated animate__fadeIn animate__fast">
-      <Header/>
+      <Header />
       <Routes>
         {routes.slice(1).map(({ path, Component, name, childs }) =>
           !childs ? (

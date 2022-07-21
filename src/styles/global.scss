@@ -13,13 +13,16 @@ body {
   font-family: "Raleway";
 }
 
-
 * {
   font-family: "Raleway";
 }
 
 #root {
   height: 100%;
+  background-image: url("../assets/images/background.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
 }
 
 ::-webkit-scrollbar {

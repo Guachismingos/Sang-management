@@ -113,6 +113,7 @@ const Login = () => {
                   </Alert>
                 )}
                 <TextField
+                  disabled={loading}
                   name="email"
                   value={email}
                   onChange={handleInputChange}
@@ -122,6 +123,7 @@ const Login = () => {
                   label="Correo electrónico"
                 />
                 <TextField
+                  disabled={loading}
                   name="password"
                   value={password}
                   onChange={handleInputChange}
@@ -134,6 +136,7 @@ const Login = () => {
                   sx={{ width: "100%", justifyContent: "left" }}
                   control={
                     <Checkbox
+                    disabled={loading}
                       checked={rememberUser}
                       inputProps={{ "aria-label": "controlled" }}
                       onChange={() => setRememberUser(!rememberUser)}

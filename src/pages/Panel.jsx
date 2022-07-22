@@ -8,6 +8,7 @@ import {
   Stack,
   Typography,
 } from "@mui/material";
+import PendingRequirementsDataGrid from "../components/requirements/PendingRequirementsDataGrid";
 
 const Panel = () => {
   return (
@@ -31,6 +32,7 @@ const Panel = () => {
                         Pendientes
                       </Typography>
                       <Divider />
+                      <PendingRequirementsDataGrid/>
                     </Stack>
                   </Paper>
                 </Grid>

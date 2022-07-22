@@ -64,7 +64,7 @@ const Login = () => {
           case "auth/wrong-password":
             setError({
               error: "La contraseña no es valida!.",
-              type: "warning",
+              type: "error",
             });
             break;
           case "auth/unauthorized-domain":

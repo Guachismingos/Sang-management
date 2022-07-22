@@ -1,3 +1,6 @@
+import { Box } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid";
+
 const PendingRequirementsDataGrid = () => {
   const rows = [
     { id: 1, col1: "Hello", col2: "World" },
@@ -10,7 +13,9 @@ const PendingRequirementsDataGrid = () => {
     { field: "col2", headerName: "Column 2", width: 150 },
   ];
 
-  return <div>PendingRequirementsDataGrid</div>;
+  return <Box height="400px" width="100%">
+    <DataGrid rows={rows} columns={columns} />
+  </Box>;
 };
 
 export default PendingRequirementsDataGrid;

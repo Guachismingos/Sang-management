@@ -69,6 +69,11 @@ const Header = () => {
         </Toolbar>
       </AppBar>
       <Toolbar />
+      <AppBar position="fixed" sx={{ top: 'auto', bottom: 0 }} enableColorOnDark>
+        <Typography variant="caption" p={0.5}>
+          <small>Sistema administrativo de requerimientos, Grupo SANG S.A &copy;</small>
+        </Typography>
+      </AppBar>
     </Container>
   );
 };

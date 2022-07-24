@@ -27,7 +27,16 @@ body {
 
 ::-webkit-scrollbar {
   background: transparent;
-  width: 0.5rem;
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar:horizontal {
+  background: transparent;
+  height: 0.7rem;
 }
 
 ::-webkit-scrollbar-thumb {

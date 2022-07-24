@@ -86,7 +86,7 @@ const Login = () => {
   };
   return (
     <Container maxWidth={false} className="pageContainer">
-      <Box className="centerChild animate__animated animate__zoomIn animate__faster">
+      <Box className="centerChild animate__animated animate__fadeIn animate__faster">
         <Container maxWidth="xs">
           <Paper elevation={8}>
             <Box component="form" onSubmit={handleSubmit}>

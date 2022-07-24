@@ -1,50 +1,54 @@
-import { Box, Grid, Stack } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid/";
-
 import { DEFAULT_DISPLAY_TEXT } from "../../assets/localeDataGridText/localeText";
+import { Box, IconButton, Paper, Stack, Typography } from "@mui/material";
+import { DataGrid } from "@mui/x-data-grid/";
 import { useState } from "react";
+import {
+  ArrowBack,
+  ArrowForward,
+  ConfirmationNumber,
+} from "@mui/icons-material";
 
 const PendingRequirementsDataGrid = () => {
-  const rows = [
-    //     { id: 1, col1: "Hello", col2: "World" },
-    //     { id: 2, col1: "DataGridPro", col2: "is Awesome" },
-    //     { id: 3, col1: "MUI", col2: "is Amazing" },
-    //     { id: 4, col1: "MUI", col2: "is Amazing" },
-    //     { id: 5, col1: "MUI", col2: "is Amazing" },
-    //     { id: 6, col1: "MUI", col2: "is Amazing" },
-    //     { id: 7, col1: "MUI", col2: "is Amazing" },
-    //     { id: 8, col1: "MUI", col2: "is Amazing" },
-    //     { id: 9, col1: "MUI", col2: "is Amazing" },
-    //     { id: 10, col1: "MUI", col2: "is Amazing" },
-    //     { id: 11, col1: "MUI", col2: "is Amazing" },
-    //     { id: 12, col1: "MUI", col2: "is Amazing" },
-    //     { id: 13, col1: "MUI", col2: "is Amazing" },
-    //     { id: 14, col1: "MUI", col2: "is Amazing" },
-    //     { id: 15, col1: "MUI", col2: "is Amazing" },
-    //     { id: 16, col1: "MUI", col2: "is Amazing" },
-    //     { id: 17, col1: "MUI", col2: "is Amazing" },
-    //     { id: 18, col1: "MUI", col2: "is Amazing" },
-  ];
+  const rows = [{ id: 1, col1: "Hello", col2: "World" }];
 
   const columns = [
-    { field: "col1", headerName: "Ticket" },
-    { field: "col2", headerName: "Fecha" },
-    { field: "col3", headerName: "Apellidos" },
-    { field: "col4", headerName: "Correo" },
+    { field: "id", headerName: "Ticket" },
+    { field: "date", headerName: "Fecha" },
+    { field: "type", headerName: "Tipo" },
+    { field: "status", headerName: "Estado" },
+    { field: "lastNames", headerName: "Apellidos" },
+    { field: "email", headerName: "Correo" },
+    { field: "address", headerName: "Dirección" },
+    { field: "primaryPhone", headerName: "Teléfono 1" },
+    { field: "secondaryPhone", headerName: "Teléfono 2" },
+    { field: "idFile", headerName: "📄Cédula" },
+    { field: "depositFile", headerName: "📄Deposito" },
+    { field: "waterFile", headerName: "📄Agua" },
+    { field: "lightFile", headerName: "📄Luz" },
+    { field: "taxesFile", headerName: "📄Impuestos" },
   ];
 
   const [selectedPage, setSelectedPage] = useState(0);
   return (
-    <Box display="flex" flexDirection="column" container height="50vh" width="100%">
+    <Box flexDirection="column" display="flex" height="50vh" width="100%">
       <DataGrid
+        localeText={DEFAULT_DISPLAY_TEXT}
+        page={selectedPage}
+        columns={columns}
         density="compact"
         rows={rows}
-        columns={columns}
-        page={selectedPage}
         hideFooter
-        localeText={DEFAULT_DISPLAY_TEXT}
       />
-      <Box>a</Box>
+      <Paper variant="outlined" sx={{ mt: 1 }}>
+        <Stack direction="row-reverse">
+          <IconButton>
+            <ArrowForward fontSize="small" />
+          </IconButton>
+          <IconButton>
+            <ArrowBack fontSize="small" />
+          </IconButton>
+        </Stack>
+      </Paper>
     </Box>
   );
 };

@@ -1,4 +1,4 @@
-import { Cottage, Done, DoneAllOutlined, DoneAllRounded, House, HouseOutlined, HouseSharp, HouseSiding, Pending, PendingActions } from "@mui/icons-material";
+import { DoneAllRounded, HouseOutlined, PendingActions } from "@mui/icons-material";
 import {
   Box,
   Container,
@@ -12,9 +12,9 @@ import PendingRequirementsDataGrid from "../components/requirements/PendingRequi
 
 const Panel = () => {
   return (
-    <Container maxWidth={false} className="pageContainer">
-      <Box className="centerChild animate__animated animate__zoomIn animate__faster">
-        <Container maxWidth="xl">
+    <Container maxWidth className="pageContainer">
+      <Box className="centerChild animate__animated animate__fadeIn animate__faster">
+        <Container maxWidth>
           <Paper elevation={8}>
             <Stack gap={2} p={2}>
               <Typography variant="h6" display="flex" alignItems="center" gap={1}>

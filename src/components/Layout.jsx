@@ -5,6 +5,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import PrivateRoute from "../router/PrivateRoute";
 
 import routes from "../router/routes";
+import Footer from "./Footer";
 import Header from "./Header";
 
 const Layout = () => {
@@ -44,6 +45,7 @@ const Layout = () => {
         </Route>
         <Route exact path="/*" element={<Navigate to="/panel" replace />} />
       </Routes>
+      <Footer/>
     </Box>
   );
 };

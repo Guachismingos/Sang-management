@@ -12,9 +12,9 @@ import PendingRequirementsDataGrid from "../components/requirements/PendingRequi
 
 const Panel = () => {
   return (
-    <Container maxWidth className="pageContainer">
-      <Box className="centerChild animate__animated animate__fadeIn animate__faster">
-        <Container maxWidth>
+    <Container maxWidth={false} className="pageContainer">
+      <Box className="centerChild animate__animated animate__fadeIn animate__faster" sx={{marginTop: 5, marginBottom: 10}}>
+        <Container maxWidth={false}>
           <Paper elevation={8}>
             <Stack gap={2} p={2}>
               <Typography variant="h6" display="flex" alignItems="center" gap={1}>
@@ -24,7 +24,7 @@ const Panel = () => {
               </Typography>
               <Divider />
               <Grid container spacing={2}>
-                <Grid xs={12} md={6} item>
+                <Grid xs={12} item>
                   <Paper variant="outlined" sx={{ p: 2 }}>
                     <Stack gap={2}>
                       <Typography variant="body2" display="flex" alignItems="center" gap={1}>
@@ -36,7 +36,7 @@ const Panel = () => {
                     </Stack>
                   </Paper>
                 </Grid>
-                <Grid xs={12} md={6} item>
+                <Grid xs={12} item>
                   <Paper variant="outlined" sx={{ p: 2 }}>
                   <Stack gap={2}>
                       <Typography variant="body2"  display="flex" alignItems="center" gap={1}>

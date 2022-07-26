@@ -68,7 +68,7 @@ export const DEFAULT_DISPLAY_TEXT = {
   columnMenuLabel: "Menu",
   columnMenuShowColumns: "Mostrar columnas",
   columnMenuFilter: "Filtro",
-  columnMenuHideColumn: "Ocualtar",
+  columnMenuHideColumn: "Ocultar",
   columnMenuUnsort: "Restablecer",
   columnMenuSortAsc: "Ordenar por ASC",
   columnMenuSortDesc: "Ordenar por DESC",

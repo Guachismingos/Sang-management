@@ -1,5 +1,13 @@
 import { useContext, useState, useEffect, createContext } from "react";
-import { signInWithEmailAndPassword, auth } from "../firebase/firebase";
+import {
+  signInWithEmailAndPassword,
+  auth,
+  db,
+  collection,
+  query,
+  onSnapshot,
+  where,
+} from "../firebase/firebase";
 
 const AuthContex = createContext();
 
@@ -17,6 +25,15 @@ export const AuthProvider = ({ children }) => {
 
   const logOut = () => auth.signOut();
 
+  //#region CRUD
+
+  const loadPendingRequirements = (callBack) => {
+    const q = query(collection(db, "requirements"), where("status", ">=", -10));
+    return onSnapshot(q, callBack);
+  };
+
+  //#endregion CRUD
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
@@ -29,6 +46,7 @@ export const AuthProvider = ({ children }) => {
     currentUser,
     singIn,
     logOut,
+    loadPendingRequirements,
   };
 
   return (

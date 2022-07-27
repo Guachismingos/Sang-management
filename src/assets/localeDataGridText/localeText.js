@@ -8,7 +8,7 @@ export const DEFAULT_DISPLAY_TEXT = {
   toolbarDensityLabel: "Densidad",
   toolbarDensityCompact: "Compacto",
   toolbarDensityStandard: "Normal",
-  toolbarDensityComfortable: "Intermedio",
+  toolbarDensityComfortable: "Amplio",
   // Columns selector toolbar button text
   toolbarColumns: "Columnas",
   toolbarColumnsLabel: "Seleccione las columnas",

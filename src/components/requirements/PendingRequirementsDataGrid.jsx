@@ -1,6 +1,6 @@
 import { DEFAULT_DISPLAY_TEXT } from "../../assets/localeDataGridText/localeText";
 import { Box, Chip, IconButton, Paper, Stack, Typography } from "@mui/material";
-import { DataGrid } from "@mui/x-data-grid/";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid/";
 import { useEffect, useState } from "react";
 import {
   ArrowBack,
@@ -8,7 +8,6 @@ import {
   ConfirmationNumber,
 } from "@mui/icons-material";
 import { useAuth } from "../../context/AuthContext";
-import { color } from "@mui/system";
 
 const PendingRequirementsDataGrid = () => {
   const { loadPendingRequirements } = useAuth();
@@ -33,7 +32,7 @@ const PendingRequirementsDataGrid = () => {
       default:
         break;
     }
-    return <Chip color={color} label={label} />;
+    return <Chip size="small" color={color} label={label} />;
   };
 
   const columns = [
@@ -79,10 +78,12 @@ const PendingRequirementsDataGrid = () => {
   return (
     <Box flexDirection="column" display="flex" height="50vh" width="100%">
       <DataGrid
+        components={{ Toolbar: GridToolbar }}
         localeText={DEFAULT_DISPLAY_TEXT}
         page={selectedPage}
+        disableColumnMenu 
         columns={columns}
-        density="comfortable"
+        density="compact"
         rows={rows}
         hideFooter
       />

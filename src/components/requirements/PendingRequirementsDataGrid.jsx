@@ -8,8 +8,11 @@ import {
   ConfirmationNumber,
 } from "@mui/icons-material";
 import { useAuth } from "../../context/AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 const PendingRequirementsDataGrid = () => {
+
+  const navigate = useNavigate();
   const { loadPendingRequirements } = useAuth();
 
   const [rows, setRows] = useState([]);
@@ -86,6 +89,7 @@ const PendingRequirementsDataGrid = () => {
         density="compact"
         rows={rows}
         hideFooter
+        onCellDoubleClick={({id}) => navigate(id)}
       />
       <Paper variant="outlined" sx={{ mt: 1 }}>
         <Stack direction="row-reverse">

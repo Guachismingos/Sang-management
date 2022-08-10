@@ -7,6 +7,8 @@ import {
   query,
   onSnapshot,
   where,
+  getDoc,
+  doc
 } from "../firebase/firebase";
 
 const AuthContex = createContext();
@@ -32,6 +34,9 @@ export const AuthProvider = ({ children }) => {
     return onSnapshot(q, callBack);
   };
 
+  const getRequirementbyId = (idRef) => getDoc(doc(db, "requirements", idRef));
+
+
   //#endregion CRUD
 
   useEffect(() => {
@@ -47,6 +52,7 @@ export const AuthProvider = ({ children }) => {
     singIn,
     logOut,
     loadPendingRequirements,
+    getRequirementbyId,
   };
 
   return (

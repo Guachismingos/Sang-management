@@ -136,7 +136,7 @@ const Login = () => {
                   sx={{ width: "100%", justifyContent: "left" }}
                   control={
                     <Checkbox
-                    disabled={loading}
+                      disabled={loading}
                       checked={rememberUser}
                       inputProps={{ "aria-label": "controlled" }}
                       onChange={() => setRememberUser(!rememberUser)}

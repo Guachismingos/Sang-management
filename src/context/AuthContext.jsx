@@ -8,7 +8,7 @@ import {
   onSnapshot,
   where,
   getDoc,
-  doc
+  doc,
 } from "../firebase/firebase";
 
 const AuthContex = createContext();
@@ -35,7 +35,6 @@ export const AuthProvider = ({ children }) => {
   };
 
   const getRequirementbyId = (idRef) => getDoc(doc(db, "requirements", idRef));
-
 
   //#endregion CRUD
 

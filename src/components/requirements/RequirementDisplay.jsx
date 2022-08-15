@@ -13,10 +13,11 @@ import {
   ListItemText,
   Paper,
   Stack,
+  TextareaAutosize,
   Typography,
 } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import { InfoOutlined, Rule, Download } from "@mui/icons-material";
+import { Download, Comment, Topic, Info, Flaky } from "@mui/icons-material";
 import { useCallback, useEffect, useState } from "react";
 import useForm from "../../hooks/useForm";
 
@@ -102,7 +103,7 @@ const RequirementDisplay = () => {
                     alignItems="center"
                     gap={1}
                   >
-                    <InfoOutlined color="info" />
+                    <Info color="info" />
                     Información del Requerimiento
                   </Typography>
                   <Divider />
@@ -134,8 +135,8 @@ const RequirementDisplay = () => {
                     alignItems="center"
                     gap={1}
                   >
-                    <Rule color="secondary" />
-                    Status
+                    <Topic color="secondary" />
+                    Documentos
                   </Typography>
                   <Divider />
                   <List
@@ -146,36 +147,70 @@ const RequirementDisplay = () => {
                     }}
                   >
                     {[0, 1, 2, 3].map((value) => (
-                        <ListItem
-                          key={value}
-                          secondaryAction={
-                            <IconButton edge="end">
-                              <Download />
-                            </IconButton>
-                          }
-                          disablePadding
+                      <ListItem
+                        key={value}
+                        secondaryAction={
+                          <IconButton edge="end">
+                            <Download />
+                          </IconButton>
+                        }
+                        disablePadding
+                      >
+                        <ListItemButton
+                          role={undefined}
+                          onClick={handleToggle(value)}
+                          dense
                         >
-                          <ListItemButton
-                            role={undefined}
-                            onClick={handleToggle(value)}
-                            dense
-                          >
-                            <ListItemIcon>
-                              <Checkbox
-                                edge="start"
-                                checked={checked.indexOf(value) !== -1}
-                                tabIndex={-1}
-                                disableRipple
-                              />
-                            </ListItemIcon>
-                            <ListItemText
-                              primary={`Line item ${value + 1}`}
+                          <ListItemIcon>
+                            <Checkbox
+                              edge="start"
+                              checked={checked.indexOf(value) !== -1}
+                              tabIndex={-1}
+                              disableRipple
                             />
-                          </ListItemButton>
-                        </ListItem>
-                      )
-                    )}
+                          </ListItemIcon>
+                          <ListItemText primary={`Line item ${value + 1}`} />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
                   </List>
+                </Stack>
+              </Paper>
+            </Grid>
+            <Grid xs={12} md={9} item>
+              <Paper elevation={8} sx={{ height: "100%" }}>
+                <Stack gap={2} p={2}>
+                  <Typography
+                    variant="h6"
+                    display="flex"
+                    alignItems="center"
+                    gap={1}
+                  >
+                    <Comment color="primary" />
+                    Comentarios
+                  </Typography>
+                  <Divider />
+                  <TextareaAutosize
+                    minRows={6}
+                    placeholder="Comentarios referentes al estado del Requerimiento."
+                    style={{ maxWidth: "100%", resize: "vertical" }}
+                  />
+                </Stack>
+              </Paper>
+            </Grid>
+            <Grid xs={12} md={3} item>
+              <Paper elevation={8} sx={{ height: "100%" }}>
+                <Stack gap={2} p={2}>
+                  <Typography
+                    variant="h6"
+                    display="flex"
+                    alignItems="center"
+                    gap={1}
+                  >
+                    <Flaky color="success" />
+                    Status
+                  </Typography>
+                  <Divider />
                 </Stack>
               </Paper>
             </Grid>

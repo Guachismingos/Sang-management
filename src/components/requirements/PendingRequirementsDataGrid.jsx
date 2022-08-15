@@ -8,17 +8,17 @@ import {
   ConfirmationNumber,
 } from "@mui/icons-material";
 import { useAuth } from "../../context/AuthContext";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const PendingRequirementsDataGrid = () => {
-
   const navigate = useNavigate();
   const { loadPendingRequirements } = useAuth();
 
   const [rows, setRows] = useState([]);
 
   const formatStatus = ({ value }) => {
-    let label = "Error", color = "error";
+    let label = "Error",
+      color = "error";
     switch (value) {
       case -1:
         label = "Cancelado";
@@ -84,12 +84,12 @@ const PendingRequirementsDataGrid = () => {
         components={{ Toolbar: GridToolbar }}
         localeText={DEFAULT_DISPLAY_TEXT}
         page={selectedPage}
-        disableColumnMenu 
+        disableColumnMenu
         columns={columns}
         density="compact"
         rows={rows}
         hideFooter
-        onCellDoubleClick={({id}) => navigate(id)}
+        onCellDoubleClick={({ id }) => navigate(id)}
       />
       <Paper variant="outlined" sx={{ mt: 1 }}>
         <Stack direction="row-reverse">

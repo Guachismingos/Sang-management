@@ -1,4 +1,8 @@
-import { DoneAllRounded, HouseOutlined, PendingActions } from "@mui/icons-material";
+import {
+  DoneAllRounded,
+  HouseOutlined,
+  PendingActions,
+} from "@mui/icons-material";
 import {
   Box,
   Container,
@@ -13,11 +17,19 @@ import PendingRequirementsDataGrid from "../components/requirements/PendingRequi
 const Panel = () => {
   return (
     <Container maxWidth={false} className="pageContainer">
-      <Box className="centerChild animate__animated animate__fadeIn animate__faster" sx={{marginTop: 5, marginBottom: 10}}>
+      <Box
+        className="centerChild animate__animated animate__fadeIn animate__faster"
+        sx={{ marginTop: 5, marginBottom: 10 }}
+      >
         <Container maxWidth={false}>
           <Paper elevation={8}>
             <Stack gap={2} p={2}>
-              <Typography variant="h6" display="flex" alignItems="center" gap={1}>
+              <Typography
+                variant="h6"
+                display="flex"
+                alignItems="center"
+                gap={1}
+              >
                 {" "}
                 <HouseOutlined color="primary" />
                 Requerimientos
@@ -27,19 +39,29 @@ const Panel = () => {
                 <Grid xs={12} item>
                   <Paper variant="outlined" sx={{ p: 2 }}>
                     <Stack gap={2}>
-                      <Typography variant="body2" display="flex" alignItems="center" gap={1}>
+                      <Typography
+                        variant="body2"
+                        display="flex"
+                        alignItems="center"
+                        gap={1}
+                      >
                         <PendingActions color="info" />
                         Pendientes
                       </Typography>
                       <Divider />
-                      <PendingRequirementsDataGrid/>
+                      <PendingRequirementsDataGrid />
                     </Stack>
                   </Paper>
                 </Grid>
                 <Grid xs={12} item>
                   <Paper variant="outlined" sx={{ p: 2 }}>
-                  <Stack gap={2}>
-                      <Typography variant="body2"  display="flex" alignItems="center" gap={1}>
+                    <Stack gap={2}>
+                      <Typography
+                        variant="body2"
+                        display="flex"
+                        alignItems="center"
+                        gap={1}
+                      >
                         <DoneAllRounded color="success" />
                         Completados
                       </Typography>

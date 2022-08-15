@@ -45,7 +45,7 @@ const Layout = () => {
         </Route>
         <Route exact path="/*" element={<Navigate to="/panel" replace />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Box>
   );
 };

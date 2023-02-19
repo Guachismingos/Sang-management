@@ -1,12 +1,6 @@
-import { DEFAULT_DISPLAY_TEXT } from "../../assets/localeDataGridText/localeText";
-import { Box, Chip, IconButton, Paper, Stack, Typography } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid/";
+import { Box, Chip } from "@mui/material";
+import { DataGrid, esES, GridToolbar } from "@mui/x-data-grid/";
 import { useEffect, useState } from "react";
-import {
-  ArrowBack,
-  ArrowForward,
-  ConfirmationNumber,
-} from "@mui/icons-material";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -65,7 +59,6 @@ const PendingRequirementsDataGrid = () => {
     { field: "address", headerName: "Dirección", minWidth: 300, flex: 2 },
   ];
 
-  const [selectedPage, setSelectedPage] = useState(0);
 
   useEffect(() => {
     const unsubscribe = loadPendingRequirements((querySnapShot) => {
@@ -81,26 +74,12 @@ const PendingRequirementsDataGrid = () => {
   return (
     <Box flexDirection="column" display="flex" height="50vh" width="100%">
       <DataGrid
-        components={{ Toolbar: GridToolbar }}
-        localeText={DEFAULT_DISPLAY_TEXT}
-        page={selectedPage}
-        disableColumnMenu
+        localeText={esES.components.MuiDataGrid.defaultProps.localeText}
+        onCellDoubleClick={({ id }) => navigate(id)}
         columns={columns}
         density="compact"
         rows={rows}
-        hideFooter
-        onCellDoubleClick={({ id }) => navigate(id)}
       />
-      <Paper variant="outlined" sx={{ mt: 1 }}>
-        <Stack direction="row-reverse">
-          <IconButton>
-            <ArrowForward fontSize="small" />
-          </IconButton>
-          <IconButton>
-            <ArrowBack fontSize="small" />
-          </IconButton>
-        </Stack>
-      </Paper>
     </Box>
   );
 };

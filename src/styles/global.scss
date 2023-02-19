@@ -4,13 +4,15 @@ html,
 body {
   margin: 0;
   height: 100%;
-  font-family: "Roboto", sans-serif;
+  display: flex;
   overflow: hidden;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
 }
 
 @font-face {
-  src: url("../assets/fonts/Raleway.ttf");
   font-family: "Raleway";
+  src: url("../assets/fonts/Raleway.ttf");
 }
 
 * {
@@ -18,11 +20,13 @@ body {
 }
 
 #root {
-  height: 100%;
-  background-image: url("../assets/images/background.svg");
-  background-repeat: no-repeat;
-  background-position: bottom;
+  flex: 1;
+  display: flex;
   background-size: cover;
+  flex-direction: column;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-image: url("../assets/images/background.svg");
 }
 
 ::-webkit-scrollbar {
@@ -49,11 +53,14 @@ body {
 }
 
 .pageContainer {
-  height: 93.5vh;
+  display: flex !important;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
   overflow: auto;
 
   .centerChild {
-    height: 100%;
+    flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;

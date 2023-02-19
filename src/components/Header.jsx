@@ -46,7 +46,7 @@ const Header = () => {
           <IconButton color="inherit" edge="start" onClick={() => navigate(-1)}>
             <ArrowBack />
           </IconButton>
-          <img width="120px" style={{ padding: 10 }} src={img_logo} />
+          <img width="90px" style={{ padding: 10 }} src={img_logo} />
           <Typography variant="caption" component="div" sx={{ flexGrow: 1 }} />
           <IconButton
             edge="end"

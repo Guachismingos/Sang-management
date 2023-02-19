@@ -12,7 +12,7 @@ const Layout = () => {
   const { path: loginPath, Component: LoginComponent } = routes[0];
 
   return (
-    <Box className="animate__animated animate__fadeIn animate__fast">
+    <Box className="animate__animated animate__fadeIn animate__fast" display="flex" flexDirection="column" flex={1}>
       <Header />
       <Routes>
         {routes.slice(1).map(({ path, Component, name, childs }) =>
